@@ -13,7 +13,6 @@ import {
 } from "@apollo/client";
 
 import App from './App';
-import './index.css';
 
 const httpLink = createHttpLink({
   uri: 'https://crwn-clothing.com'

@@ -12,12 +12,21 @@ export const PreviewCollectionContainer = styled.div`
 `
 
 export const Title = styled.h1`
-    font-size: 28px;
-    display:inline-block;
     margin-bottom: 25px;
+    padding:0;
+
+    @media screen and (max-width: 1000px) {
+        text-align: center;
+    }
 `
 
 export const PreviewContainer = styled.div`
     display: flex;
     justify-content: space-between;
+    flex-flow: row nowrap;
+
+    @media screen and (max-width:1000px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `

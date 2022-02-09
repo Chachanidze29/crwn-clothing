@@ -57,8 +57,12 @@ export const MenuItemContainer = styled.div`
         }
     }
 
-& .content
-    opacity: 0.9
+    @media screen and (max-width:800px) {
+        min-width: 100%;
+    }
+
+    & .content {
+        opacity: 0.9
     }
 `
 

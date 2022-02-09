@@ -1,5 +1,5 @@
 import { React } from 'react';
-import withRouter from '../withRouter/withRouter.component';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import {
     MenuItemContainer,
@@ -9,18 +9,22 @@ import {
     Subtitle
 } from './menu-item.styles';
 
-const MenuItem = ({ title, imageUrl, size, linkUrl, location, history }) => (
-    <MenuItemContainer className={`${size}`} onClick={() => history(`${location.pathname}${linkUrl}`)}>
-        <BackgroundImageContainer
-            style={{
-                backgroundImage: `url(${imageUrl})`
-            }}
-        />
-        <ContentContainer>
-            <Title>{title}</Title>
-            <Subtitle>Shop Now</Subtitle>
-        </ContentContainer>
-    </MenuItemContainer>
-)
+const MenuItem = ({ title, imageUrl, size, linkUrl }) => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    return (
+        <MenuItemContainer className={`${size}`} onClick={() => navigate(`${location.pathname}${linkUrl}`)}>
+            <BackgroundImageContainer
+                style={{
+                    backgroundImage: `url(${imageUrl})`
+                }}
+            />
+            <ContentContainer>
+                <Title>{title}</Title>
+                <Subtitle>Shop Now</Subtitle>
+            </ContentContainer>
+        </MenuItemContainer>
+    )
+}
 
-export default withRouter(MenuItem);
+export default MenuItem;

@@ -11,6 +11,9 @@ export const Title = styled.h2`
 `
 
 export const ItemsContainer = styled.div`
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
+    display:flex;
+    flex-flow:row wrap;
+
+    @media screen and (max-width:1000px) {
+    }
 `
